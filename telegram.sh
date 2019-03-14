@@ -22,18 +22,12 @@ commands
     # - 75 59                 jne 0x10b5468
     # + 90 90                 nop nop
 
-    set {char [2]}(_ZN13HistoryWidget24toggleTabbedSelectorModeEv+89) = { 0x90, 0x90 }
-    # - 74 45                 je 0x10b5460
-    # + 90 90                 nop nop
 
-    set {char [2]}(_ZN13HistoryWidget24toggleTabbedSelectorModeEv+96) = { 0x90, 0x90 }
-    # - 74 3e                 je 0x10b5460
-    # + 90 90                 nop nop
 
     # When hover over emoji button, dont do anything, just return
-    set {char [5]}(_ZN11ChatHelpers11TabbedPanel10otherEnterEv+0) = { 0xc3, 0x90, 0x90, 0x90, 0x90 }
+    set {char}(_ZN11ChatHelpers11TabbedPanel10otherEnterEv) = 0xc3
     # - e9 ab ff ff ff        jmp sym.ChatHelpers::TabbedPanel::showAnimated
-    # + c3 90 90 90 90        ret; nop nop nop nop
+    # + c3 ab ff ff ff        ret; garbage
 end
 run
 detach
